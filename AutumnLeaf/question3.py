@@ -1,14 +1,14 @@
 import requests
 import bs4
 
-it = 0
-x = requests.get('https://9gag.com')
-while it < 6:
-	if x:
-		it += 1
-		print("instance no.",it)
-	print('instance elapsed time: ',x.elapsed)
+times = 0
+site = requests.get('https://9gag.com')
+while times < 6:
+	if site:
+		times += 1
+		print("instance no.",times)
+	print('instance elapsed time: ',site.elapsed)
 
-page = bs4.BeautifulSoup(x.text, features="html.parser")
+page = bs4.BeautifulSoup(site.text, features="html.parser")
 print('Site Name : ', page.title.text)
 
